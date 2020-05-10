@@ -33,6 +33,29 @@
 				</ol>
 			</form>
 		</div>
+		
+		<div id="tracks">
+			<form>
+				<ul class="tracks">
+					<li>
+						<fieldset>
+							<span data-name="index"></span>
+							<span data-name="name"></span>
+						
+							<label>
+								Display
+								<input name="display[]" type="checkbox"></input>
+							</label>
+							
+							<label>
+								Color
+								<input name="color[]" type="color"></input>
+							</label>
+						</fieldset>
+					</li>
+				</ul>
+			</form>
+		</div>
 	
 		<script src="lib/jquery-1.12.4.min.js"></script>
 		<script src="lib/MIDI.min.js"></script>
@@ -42,6 +65,8 @@
 		
 		<script src="js/kalimba.js"></script>
 		<script src="js/tablature.js"></script>
+		
+		<script src="js/tracks.js"></script>
 		
 		<script src="js/app.js"></script>
 	

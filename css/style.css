@@ -48,12 +48,28 @@ input[name="pitch[]"]
 
 #tablature .note
 {
-	display: block;
 	position: absolute;
+}
+
+#tablature .note:not(.unplayable)
+{
+	display: block;
 	
 	width: 32px;
 	
-	background: red;
+	background: green;
 	box-shadow: -2px -2px 5px inset black,
 		2px 2px 5px inset white;
+}
+
+#tablature .note.unplayable
+{
+	font-family: monospace;
+	left: 0px;
+	width: 100%;
+	text-align: right;
+	border-top: 1px dotted red;
+	font-size: 6pt;
+	font-weight: bold;
+	color: red;
 }

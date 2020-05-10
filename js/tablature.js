@@ -16,7 +16,7 @@ jQuery(function($) {
 		var tablature	= new Tablature(element, kalimba);
 		
 		// Just one track for now
-		var track		= midi.tracks[0];
+		var track		= midi.tracks[1];
 		
 		// Track absolute start
 		var start		= 0;

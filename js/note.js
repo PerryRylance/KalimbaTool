@@ -55,11 +55,31 @@ jQuery(function($) {
 		start		*= this.tablature.scaleY;
 		duration	*= this.tablature.scaleY;
 		
-		$(this.element).css({
-			bottom:		start + "px",
-			left:		(32 * index) + "px",
-			height:		duration + "px"
-		});
+		if(index === null)
+		{
+			$(this.element).addClass("unplayable");
+			
+			$(this.element).css({
+				bottom:		start + "px",
+			});
+			
+			$(this.element).text(
+				Pitch.getLetterFromMIDIPitch(this.event.pitch())
+				+
+				Pitch.getOctaveFromMIDIPitch(this.event.pitch())
+			);
+		}
+		else
+		{
+			$(this.element).removeClass("unplayable");
+			
+			$(this.element).css({
+				bottom:				start + "px",
+				left:				(32 * index) + "px",
+				height:				duration + "px",
+				"background-color":	this.track.color
+			});
+		}
 		
 	}
 	
