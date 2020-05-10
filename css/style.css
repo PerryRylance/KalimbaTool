@@ -1,0 +1,59 @@
+html, body
+{
+	font-family: sans-serif;
+}
+
+ol, ul
+{
+	list-style: none;
+	padding: 0;
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 256px;
+    padding: 0 5px;
+}
+
+input[name="pitch[]"]
+{
+	width: 100%;
+}
+
+#kalimba ol.keys
+{
+	display: flex;
+}
+
+#kalimba ol.keys > li
+{
+	text-align: center;	
+	width: 32px;
+}
+
+#kalimba .pitch-display
+{
+	border: 1px solid lightgrey;
+	width: 32px;
+}
+
+#tablature
+{
+	position: relative;
+	height: 50vh;
+}
+
+#tablature .note
+{
+	display: block;
+	position: absolute;
+	
+	width: 32px;
+	
+	background: red;
+	box-shadow: -2px -2px 5px inset black,
+		2px 2px 5px inset white;
+}

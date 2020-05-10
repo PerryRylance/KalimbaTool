@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>KalimbaTool</title>
+		
+		<link rel="stylesheet" href="css/style.css"></link>
+		
+	</head>
+	
+	<body>
+	
+		<div id="tablature"></div>
+		
+		<div id="kalimba">
+			<form>
+				<ol class="keys">
+					<li>
+						<div class="pitch-display">
+							<span class="pitch-letter">C</span><span class="pitch-octave">4</span>
+						</div>
+						
+						<input
+							name="pitch[]" 
+							type="range" 
+							min="21" 
+							max="108" 
+							step="1" 
+							value="60"
+							orient="vertical"
+							/>
+					</li>
+				</ol>
+			</form>
+		</div>
+	
+		<script src="lib/jquery-1.12.4.min.js"></script>
+		<script src="lib/MIDI.min.js"></script>
+		
+		<script src="js/pitch.js"></script>
+		<script src="js/note.js"></script>
+		
+		<script src="js/kalimba.js"></script>
+		<script src="js/tablature.js"></script>
+		
+		<script src="js/app.js"></script>
+	
+	</body>
+</html>
