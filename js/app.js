@@ -61,10 +61,17 @@ jQuery(function($) {
 		this.tracks		= new Tracks($("#tracks"));
 		
 		this.tracks.update(temp);
-		
 		this.tablature	= Tablature.fromMIDI($("#tablature"), this.kalimba, temp);
 		
+		
 	}
+	
+	Object.defineProperty(window, "tablature", {
+		get: function()
+		{
+			debugger;
+		}
+	});
 	
 	window.app = new App();
 	

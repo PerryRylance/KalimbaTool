@@ -49,6 +49,7 @@ input[name="pitch[]"]
 #tablature .note
 {
 	position: absolute;
+	opacity: 0.6;
 }
 
 #tablature .note:not(.unplayable)
@@ -57,7 +58,7 @@ input[name="pitch[]"]
 	
 	width: 32px;
 	
-	background: green;
+	background-color: green;
 	box-shadow: -2px -2px 5px inset black,
 		2px 2px 5px inset white;
 }
@@ -72,4 +73,37 @@ input[name="pitch[]"]
 	font-size: 6pt;
 	font-weight: bold;
 	color: red;
+}
+
+#tracks li
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+#tracks li > span:last-of-type
+{
+	flex: 1;
+}
+
+#tracks span[data-name="index"]
+{
+	width: 32px;
+}
+
+#tracks li:nth-child(odd)
+{
+	background: #eee;
+}
+
+#tracks li:nth-child(even)
+{
+	background: #ddd;
+}
+
+#tracks li:hover
+{
+	background: #ccc;
 }
