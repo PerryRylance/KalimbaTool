@@ -33,11 +33,11 @@ jQuery(function($) {
 					if(event.pitch() != this.event.pitch())
 						continue;
 				
+					i = this.track.events.length;
 					break;
 				
 				default:
 					continue;
-					break;
 			}
 		}
 		

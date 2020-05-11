@@ -28,11 +28,19 @@ jQuery(function($) {
 		return tablature;
 	}
 	
+	Tablature.prototype.setProgress = function(f)
+	{
+		$(this.element).children(".inner").css({
+			bottom: (f * -this.height) + "px"
+		});
+	}
+	
 	Tablature.prototype.redraw = function()
 	{
 		var self = this;
+		var container = $(this.element).children(".inner");
 		
-		$(this.element).empty();
+		container.empty();
 		
 		this.renderers = [];
 		
@@ -43,8 +51,30 @@ jQuery(function($) {
 			renderer.redraw();
 			
 			self.renderers.push(renderer);
-			self.element.append(renderer.element);
+			container.append(renderer.element);
 			
+		});
+		
+		var height = 0;
+		
+		$(this.element).find(".note").each(function(index, el) {
+			
+			var y = parseFloat($(el).css("bottom"));
+			
+			
+			if(!$(el).is(":last-of-type"))
+				y += parseFloat($(el).css("height"));
+			else
+				console.log("Ignoring last note");
+			
+			height = Math.max(height, y);
+			
+		});
+		
+		this.height = height;
+		this.element.children(".inner").css({
+			width: $(this.element).width() + "px",
+			height: height + "px"
 		});
 	}
 	

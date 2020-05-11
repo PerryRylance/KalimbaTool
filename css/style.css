@@ -23,9 +23,15 @@ input[name="pitch[]"]
 	width: 100%;
 }
 
+#kalimba
+{
+	background: white;
+}
+
 #kalimba ol.keys
 {
 	display: flex;
+	margin: 0;
 }
 
 #kalimba ol.keys > li
@@ -42,8 +48,15 @@ input[name="pitch[]"]
 
 #tablature
 {
-	position: relative;
 	height: 50vh;
+	overflow: hidden;
+	position: relative;
+}
+
+#tablature > .inner
+{
+	position: absolute;
+	bottom: 0px;
 }
 
 #tablature .note
