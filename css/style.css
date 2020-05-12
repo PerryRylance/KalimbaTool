@@ -18,6 +18,11 @@ input[type=range][orient=vertical]
     padding: 0 5px;
 }
 
+#wrapper
+{
+	
+}
+
 input[name="pitch[]"]
 {
 	width: 100%;
@@ -25,7 +30,23 @@ input[name="pitch[]"]
 
 #kalimba
 {
-	background: white;
+	background: url('../images/14972-v2.jpg');
+	
+	box-shadow: -2px -2px 5px inset black,
+		2px 2px 5px inset white;
+		
+	border-radius: 6px;
+}
+
+#soundhole
+{
+	text-align: center;
+}
+
+#soundhole > img
+{
+	width: 128px;
+	height: auto;
 }
 
 #kalimba ol.keys
@@ -44,6 +65,7 @@ input[name="pitch[]"]
 {
 	border: 1px solid lightgrey;
 	width: 32px;
+	background: white;
 }
 
 #tablature
@@ -119,4 +141,40 @@ input[name="pitch[]"]
 #tracks li:hover
 {
 	background: #ccc;
+}
+
+#tracks label
+{
+	padding-left: 0.5em;
+}
+
+#tracks input[name='hide[]'],
+	#tracks input[name='hide[]'] ~ i,
+	#tracks input[name='mute[]'],
+	#tracks input[name='mute[]'] ~ i
+{
+	display: none;
+}
+
+#tracks input[name='hide[]']:checked ~ .fa-eye-slash,
+	#tracks input[name='hide[]']:not(:checked) ~ .fa-eye,
+	#tracks input[name='mute[]']:checked ~ .fa-volume-mute,
+	#tracks input[name='mute[]']:not(:checked) ~ .fa-volume-up
+{
+	display: inline;
+}
+
+#playback > button
+{
+	display: none;
+}
+
+#playback[data-playing="true"] > button#pause
+{
+	display: inline;
+}
+
+#playback[data-playing="false"] > button#play
+{
+	display: inline;
 }
